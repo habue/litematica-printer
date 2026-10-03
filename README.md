@@ -1,14 +1,25 @@
-# Litematica Printer
+# Litematica Printer — Minecraft 26.1.2
 
-![GitHub issues](https://img.shields.io/github/issues-raw/aleksilassila/litematica-printer)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/aleksilassila/litematica-printer)
-![GitHub all releases](https://img.shields.io/github/downloads/aleksilassila/litematica-printer/total)
-![GitHub Repo stars](https://img.shields.io/github/stars/aleksilassila/litematica-printer)
+This branch builds the IceTank printer fork for **Minecraft 26.1.2** with **Java 25**.
+The original Minecraft 1.21.4 version remains available on the `1.21.4` branch.
 
-This extension adds printing functionality for [Litematica fabric](https://github.com/maruohon/litematica) 1.20.4 1.21 
-and 1.21.4 versions. Printer allows players to build big structures more quickly by automatically placing the correct blocks around you.
+## Build and download
 
-![Demo](printer_demo.gif)
+- Build locally with JDK 25: `bash ./gradlew :v26_1_2:build`.
+- The mod is written to `v26_1_2/build/libs/litematica-printer-3.4.0+mc26.1.2.jar`.
+- GitHub Actions builds pushes and pull requests to `26.1.2`. Open a successful
+  run under **Actions → Build Minecraft 26.1.2** and download the
+  **litematica-printer-mc26.1.2** artifact, then extract the JAR.
+- Install Fabric Loader 0.19.3 or newer, MaLiLib 0.28.12 or newer for 26.1.2,
+  and Litematica 0.27.14 or newer for 26.1.2 alongside the printer.
+
+## Port source
+
+The port adapts the Minecraft 26.2 implementation from
+[EvModder/litematica-printer](https://github.com/EvModder/litematica-printer),
+commit `16c222b`, which retains IceTank's AirPlace, Grim rotation, inventory
+management, and FreeLook, and fixes offhand synchronization and FreeLook compatibility.
+The build targets 26.1.2 and uses its matching MaLiLib/Litematica dependencies.
 
 ## Installation
 
@@ -113,6 +124,4 @@ such as automatic excavation or correcting incorrectly placed blocks are out of 
 
 ## Building and Contributing
 
-I recommend Intellij for developing. Just clone the repo and open the project. Make sure to use at least java jdk 17 for 1.20.4
-and java jdk 21 for newer versions or gradlew will complain. The jar file can be build using the build task under
-`v{version} > Tasks > build > build`.
+Use JDK 25 and run `bash ./gradlew :v26_1_2:build`.
